@@ -29,6 +29,4 @@ jobs:
     - name: Codecov publish report
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         files: ./build/reports/kover/xml/report.xml
-        verbose: true # optional (default = false)
