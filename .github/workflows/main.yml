@@ -11,7 +11,7 @@ jobs:
   gradle:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
@@ -25,3 +25,14 @@ jobs:
     
     - name: Execute Gradle build and get coverage
       run: ./gradlew build test koverReport
+    
+    - name: Add coverage report to PR
+      id: kover
+      uses: mi-kas/kover-report@v1
+      with:
+        path: ${{ github.workspace }}/build/reports/kover/xml/report.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: Code Coverage
+        update-comment: true
+        min-coverage-overall: 80
+        min-coverage-changed-files: 80
