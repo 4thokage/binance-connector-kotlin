@@ -37,7 +37,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/4thokage")
+            url = uri("https://maven.pkg.github.com/4thokage/binance-connector-kotlin")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
