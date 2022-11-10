@@ -23,6 +23,14 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.2")
 }
 
+kover {
+    xmlReport {
+        onCheck.set(false) // set to true to run koverXmlReport task during the execution of the check task (if it exists) of the current project
+        reportFile.set(layout.buildDirectory.file("reports/kover/project-xml/report.xml")) // change report file name
+
+    }
+}
+
 
 publishing {
     publications {
