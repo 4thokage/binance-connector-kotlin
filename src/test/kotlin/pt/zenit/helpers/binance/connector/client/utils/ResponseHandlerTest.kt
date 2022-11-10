@@ -1,5 +1,6 @@
 package pt.zenit.helpers.binance.connector.client.utils
 
+import com.beust.klaxon.Klaxon
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.Client
 import com.github.kittinunf.fuel.core.FuelManager
@@ -53,6 +54,8 @@ internal class ResponseHandlerTest {
             )
         }
         assertTrue(thrown.message?.contains(mockErrorMsg) ?: false)
+        assertEquals(thrown.errorCode, MockData.HTTP_STATUS_CLIENT_ERROR)
+        assertEquals(thrown.errorMsg, Klaxon().toJsonString(mockErrorMsg))
     }
 
     @Test
@@ -88,6 +91,7 @@ internal class ResponseHandlerTest {
             )
         }
         assertTrue(thrown.message!!.contains(mockErrorMsg))
+        assertEquals(thrown.statusCode, MockData.HTTP_STATUS_SERVER_ERROR)
     }
 
 }

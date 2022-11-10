@@ -47,5 +47,7 @@ internal class StakingTest {
         val thrown: BinanceConnectorException = Assertions.assertThrows(BinanceConnectorException::class.java) {
             client.createStaking().getPosition(parameters)
         }
+
+        assertEquals("\"product\" is a mandatory parameter!", thrown.message)
     }
 }

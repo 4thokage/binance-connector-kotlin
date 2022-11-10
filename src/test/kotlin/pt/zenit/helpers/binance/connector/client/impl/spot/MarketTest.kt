@@ -4,7 +4,7 @@ import com.github.kittinunf.fuel.core.Client
 import com.github.kittinunf.fuel.core.FuelManager
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import pt.zenit.helpers.binance.connector.client.impl.SpotClientImpl
 import pt.zenit.helpers.binance.connector.client.utils.MockData

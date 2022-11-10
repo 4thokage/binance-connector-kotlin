@@ -17,20 +17,11 @@ repositories {
 dependencies {
     implementation("com.github.kittinunf.fuel:fuel:2.3.1")
     implementation("commons-codec:commons-codec:1.15")
-    implementation("org.junit.jupiter:junit-jupiter:5.7.0")
+    implementation("org.junit.jupiter:junit-jupiter:5.9.0")
     implementation("com.beust:klaxon:5.6")
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.7.20")
     testImplementation("io.mockk:mockk:1.13.2")
 }
-
-kover {
-    xmlReport {
-        onCheck.set(false) // set to true to run koverXmlReport task during the execution of the check task (if it exists) of the current project
-        reportFile.set(layout.buildDirectory.file("reports/kover/project-xml/report.xml")) // change report file name
-
-    }
-}
-
 
 publishing {
     publications {
