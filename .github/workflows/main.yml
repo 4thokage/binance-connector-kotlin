@@ -29,4 +29,5 @@ jobs:
     - name: Codecov publish report
       uses: codecov/codecov-action@v3
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         files: ./build/reports/kover/xml/report.xml
