@@ -25,7 +25,3 @@ jobs:
     
     - name: Execute Gradle build and get coverage
       run: ./gradlew build test koverReport
-    
-    - name: Parse coverage
-      id: parse_coverage
-      uses: stevenleadbeater/kover-report-parser-action@0.0.1
